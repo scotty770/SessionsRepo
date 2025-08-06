@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        Sticky Fingers Forum | <a href="/admin">Admin</a>
+    </header>
+    <div class="container">
+        <form method="POST" action="/post">
+            <label>Name:</label>
+            <input name="author" type="text" required><br>
+            <label>Message:</label>
+            <textarea name="content" rows="4" required></textarea><br>
+            <input type="submit" value="Post">
+        </form>
+
+        <h2>Posts:</h2>
+        {% for post in posts %}
+            <div class="post">
+                <strong>{{ post.author }}</strong>
+                <p>{{ post.content|safe }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

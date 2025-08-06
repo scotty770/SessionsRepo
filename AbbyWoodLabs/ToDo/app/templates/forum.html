@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        Notes Storage
+    </header>
+    
+    <div class="container">
+        <form method="POST" action="/post">
+            <label>Note:</label>
+            <input name="content" type="text" required>
+            <input type="submit" class="happy" value="Post">
+        </form>
+
+        <h2>Posts:</h2>
+        {% for post in posts %}
+            <div class="post">
+                <strong>{{ post.content }}</strong>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <p>Be careful! Notes only last as long as your session</p>
+        <form action="/change">
+            <input type="submit" class="danger" value="Delete session" />
+        </form>
+        
+    </div>
+
+</body>
+</html>

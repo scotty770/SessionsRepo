@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Survey - Page 2</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #00ffcc;
+    }
+
+    .results {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .label {
+      color: #999;
+    }
+
+    .back-button {
+        margin-top: 30px;
+        padding: 10px 20px;
+        background-color: #00ffcc;
+        color: #111;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .back-button:hover {
+        background-color: #00ccaa;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Review Answers</h1>
+  <div class="results">
+    <p><span class="label">Name:</span> {{ name }}</p>
+    <p><span class="label">Deepest Secret:</span> {{ secret }}</p>
+  </div>
+  <form action="{{ url_for('index') }}" method="get">
+    <input type="hidden" name="session_id" value="{{ session }}">
+    <button class="back-button" type="submit">Change response</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        Mystery Company Forum | <a href="/admin">Admin</a>
+    </header>
+    <div class="container">
+        <form method="get" action="/">
+            <label>Name:</label>
+            <input name="author" type="text" required disabled><br>
+            <label>Message:</label>
+            <textarea name="content" rows="4" required disabled></textarea><br>
+            <input type="submit" value="You do not have permission to post" disabled>
+        </form>
+
+        <h2>Posts:</h2>
+        {% for post in posts %}
+            <div class="post">
+                <strong>{{ post.author }}</strong>
+                <p>{{ post.content|safe }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
