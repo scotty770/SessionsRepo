@@ -77,5 +77,6 @@ def click():
         return jsonify({'error': 'Invalid token'}), 400
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3005)
+    app.run(host="0.0.0.0", port=3000)
+
 
