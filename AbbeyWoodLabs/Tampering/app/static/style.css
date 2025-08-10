@@ -23,6 +23,10 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+a {
+    color: red;
+}
+
 form input[type="text"],
 form textarea {
     width: 100%;
@@ -75,4 +79,5 @@ form input[type="submit"]:hover {
     background-color: dimgrey;
     color: linen;
     opacity: 1;
+
   }
